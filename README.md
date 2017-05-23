@@ -5,6 +5,7 @@ Login feito pelos alunos Kennedy e Monique de ADS.
 
 void main()
 {
-   printf("OLA MUNDOOO!!!");
+   printf("Por Kennedy e Monique!!!");
+   printf("\nOLA MUNDOOO!!!");
    return(0);
 }
