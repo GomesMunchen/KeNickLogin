@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+char nome[9][32];
+int  idade[9];
+int  nivel[9];//0 a 5
+float altura[9];
+int  max, i;
+
+void main(){
+	setlocale(LC_ALL,"");
+	printf("Cadastrar quantos Até  10: ");
+	do {
+	scanf("%d",&max);
+	if (max < 1 || max > 10) 
+		printf("Numero invalido, digite um numero até 10: ");
+	}
+	while( max<1 || max>10 );
+
+	printf("\nCADASTRAMENTO [%d]\n\n",max);
+
+	i = 0;
+	while(i<max){
+   		printf("\nId   : %d\n",i+1);
+		printf("NOME : ");
+		scanf("%s",nome[i]);
+		
+		printf("IDADE: ");
+		scanf("%d",&idade[i]);
+		
+		do {
+			printf("NIVEL: ");
+			scanf("%d",&nivel[i]);
+			if ( nivel [i] < 0 || nivel [i] > 5 ) printf("Nivel invalido. Digite um nivel entre 1 e 5!\n");
+		}
+		while ( nivel [i] < 0 || nivel [i] > 5 );
+	
+		printf("ALTURA: ");
+		scanf("%f",&altura[i]);
+	
+		if ( altura [i] < 1.6 ) printf("\nVoce e um HOBBIT!");
+		
+		
+		i = i + 1;
+	}
+
+	i = 0;
+	while(i<max){
+		printf("\n%s - %d [%d]", nome[i], idade[i], nivel[i]);
+		i = i + 1;
+	}
+	
+	getch();
+	
+}
